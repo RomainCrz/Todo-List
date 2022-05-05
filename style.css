@@ -1,0 +1,98 @@
+*{
+    font-family: sans-serif;
+}
+
+
+body{
+    background: grey;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+}
+
+#container{
+    background: black;
+    padding: 40px;
+    width: 500px;
+    border-radius: 20px;
+    text-align: center;
+    color: white;
+
+}
+
+h2{
+
+    margin: 0 0 40px;
+    font-size: 2.5rem ;
+    letter-spacing: 4px;
+    text-shadow: 0px 3px  orange;
+}
+
+input[type="text"]{
+    border-radius: 50px;
+    height: 40px;
+    width: 300px;
+    padding-left: 20px;
+    outline: none;
+}
+
+
+.new_task, .done{
+    position: relative;
+    display: block;
+    text-align: left;
+    margin-top: 30px;
+    padding-left: 20px;
+    font-size: 1.2rem;
+    cursor: pointer;
+    
+}
+.new_task::before, .done::before{
+    content :"*";
+    position: absolute;
+    left: -10px;
+    top : 0%;
+    transform: translateY(-0%);
+    font-size: 2rem; 
+}
+
+.new_task:hover::after{
+    
+    content: "(terminé)";
+    font-size: 0.8rem;
+    font-style: italic;
+    margin-left: 10px;
+}
+
+.done::before{
+    content: "✓";
+    font-size: 1rem;  
+}
+
+.done:hover::after{
+    
+    content: "(supprimer)";
+    font-size: 0.8rem;
+    font-style: italic;
+    margin-left: 10px;
+}
+
+
+@media screen and (max-width: 400px) {
+
+    body{
+        align-items:flex-start 
+    }
+    #container{
+        width: 250px;
+        overflow-wrap:break-word;
+    }
+    input[type="text"]{
+        border-radius: 50px;
+        height: 40px;
+        width: 200px;
+        padding-left: 20px;
+        outline: none;
+    }
+}
